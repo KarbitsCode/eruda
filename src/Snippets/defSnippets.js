@@ -222,7 +222,7 @@ const pluginVersion = {
   timing: '2.0.1',
   code: '2.2.0',
   benchmark: '2.0.1',
-  geolocation: '2.0.0',
+  geolocation: '2.1.0',
   orientation: '2.0.0',
   touches: '2.1.0',
 }
