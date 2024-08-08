@@ -1,3 +1,7 @@
+## 3.2.2 (8 AUG 2024)
+
+* chore: update plugin versions
+
 ## 3.2.1 (20 JUL 2024)
 
 * fix: touches plugin [#344](https://github.com/liriliri/eruda/issues/344)
