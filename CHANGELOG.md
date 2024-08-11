@@ -1,3 +1,7 @@
+## 3.2.3 (10 AUG 2024)
+
+* fix: WebSocket message base64 encoded [#447](https://github.com/liriliri/eruda/issues/447)
+
 ## 3.2.2 (8 AUG 2024)
 
 * chore: update plugin versions
