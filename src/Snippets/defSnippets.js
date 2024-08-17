@@ -94,6 +94,13 @@ export default [
     desc: 'Scale down the whole page to fit screen',
   },
   {
+    name: 'Load Vue Plugin',
+    fn() {
+      loadPlugin('vue')
+    },
+    desc: 'Vue devtools',
+  },
+  {
     name: 'Load Monitor Plugin',
     fn() {
       loadPlugin('monitor')
@@ -225,4 +232,5 @@ const pluginVersion = {
   geolocation: '2.1.0',
   orientation: '2.1.1',
   touches: '2.1.0',
+  vue: '1.0.1',
 }
