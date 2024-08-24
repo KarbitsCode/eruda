@@ -29,11 +29,11 @@ Console for Mobile Browsers.
 [license-image]: https://img.shields.io/npm/l/eruda?style=flat-square
 [donate-image]: https://img.shields.io/badge/$-donate-0070ba.svg?style=flat-square
 
-<img src="https://eruda.liriliri.io/img/screenshot.jpg" style="width:100%">
+<img src="https://eruda.liriliri.io/screenshot.jpg" style="width:100%">
 
 ## Demo
 
-![Demo](https://eruda.liriliri.io/img/qrcode.png)
+![Demo](https://eruda.liriliri.io/qrcode.png)
 
 Browse it on your phone: [https://eruda.liriliri.io/](https://eruda.liriliri.io/)
 
@@ -71,7 +71,7 @@ Add this script to your page.
 It's also available on [jsDelivr](http://www.jsdelivr.com/projects/eruda) and [cdnjs](https://cdnjs.com/libraries/eruda).
 
 ```html
-<script src="//cdn.jsdelivr.net/npm/eruda"></script>
+<script src="https://cdn.jsdelivr.net/npm/eruda"></script>
 <script>eruda.init();</script>
 ```
 
