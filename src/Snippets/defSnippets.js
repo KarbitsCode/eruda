@@ -232,5 +232,5 @@ const pluginVersion = {
   geolocation: '2.1.0',
   orientation: '2.1.1',
   touches: '2.1.0',
-  vue: '1.0.1',
+  vue: '1.1.0',
 }
