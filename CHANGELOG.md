@@ -1,3 +1,7 @@
+## 3.3.0 (9 Sep 2024)
+
+* feat: add vue devtools plugin
+
 ## 3.2.3 (10 AUG 2024)
 
 * fix: WebSocket message base64 encoded [#447](https://github.com/liriliri/eruda/issues/447)

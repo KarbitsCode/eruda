@@ -230,11 +230,10 @@ export default class Resources extends Tool {
     const imageState = getState('image', imageData.length)
     let imageDataHtml = '<li>Empty</li>'
     if (!isEmpty(imageData)) {
+      // prettier-ignore
       imageDataHtml = map(imageData, (image) => {
         return `<li class="${c('image')}">
-          <img src="${escape(image)}" data-exclude="true" class="${c(
-          'img-link'
-        )}"/>
+          <img src="${escape(image)}" data-exclude="true" class="${c('img-link')}"/>
         </li>`
       }).join('')
     }

@@ -56,12 +56,19 @@
     font-size: $font-size-s;
     display: flex;
     flex-wrap: wrap;
-    padding: $padding !important;
-    @include clear-float();
+    padding-left: $padding;
+    padding-top: $padding;
+    &::after {
+      content: '';
+      flex-grow: 1000;
+    }
     li {
       flex-grow: 1;
       cursor: pointer;
       overflow-y: hidden;
+      margin-right: $padding;
+      margin-bottom: $padding;
+      border: 1px solid var(--border);
       &.image {
         height: 100px;
         font-size: 0;

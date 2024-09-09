@@ -17,6 +17,7 @@ import isBool from 'licia/isBool'
 import safeGet from 'licia/safeGet'
 import $ from 'licia/$'
 import h from 'licia/h'
+import extend from 'licia/extend'
 import MutationObserver from 'licia/MutationObserver'
 import CssStore from './CssStore'
 import Settings from '../Settings/Settings'
@@ -31,10 +32,10 @@ export default class Detail {
     this._$container = $container
     this._devtools = devtools
     this._curEl = document.documentElement
-    this._bindEvent()
     this._initObserver()
     this._initCfg()
     this._initTpl()
+    this._bindEvent()
   }
   show(el) {
     this._curEl = el
@@ -42,18 +43,7 @@ export default class Detail {
     this._computedStyleSearchKeyword = ''
     this._enableObserver()
     this._render()
-
-    const { nodeId } = chobitsu.domain('DOM').getNodeId({ node: el })
-    chobitsu.domain('Overlay').highlightNode({
-      nodeId,
-      highlightConfig: {
-        showInfo: true,
-        contentColor: 'rgba(111, 168, 220, .66)',
-        paddingColor: 'rgba(147, 196, 125, .55)',
-        borderColor: 'rgba(255, 229, 153, .66)',
-        marginColor: 'rgba(246, 178, 107, .66)',
-      },
-    })
+    this._highlight()
   }
   hide = () => {
     this._$container.hide()
@@ -86,6 +76,36 @@ export default class Detail {
 
     if (this._origAddEvent) winEventProto.addEventListener = this._origAddEvent
     if (this._origRmEvent) winEventProto.removeEventListener = this._origRmEvent
+  }
+  _highlight = (type) => {
+    const el = this._curEl
+
+    const highlightConfig = {
+      showInfo: false,
+    }
+    if (!type || type === 'all') {
+      extend(highlightConfig, {
+        showInfo: true,
+        contentColor: 'rgba(111, 168, 220, .66)',
+        paddingColor: 'rgba(147, 196, 125, .55)',
+        borderColor: 'rgba(255, 229, 153, .66)',
+        marginColor: 'rgba(246, 178, 107, .66)',
+      })
+    } else if (type === 'margin') {
+      highlightConfig.marginColor = 'rgba(246, 178, 107, .66)'
+    } else if (type === 'border') {
+      highlightConfig.borderColor = 'rgba(255, 229, 153, .66)'
+    } else if (type === 'padding') {
+      highlightConfig.paddingColor = 'rgba(147, 196, 125, .55)'
+    } else if (type === 'content') {
+      highlightConfig.contentColor = 'rgba(111, 168, 220, .66)'
+    }
+
+    const { nodeId } = chobitsu.domain('DOM').getNodeId({ node: el })
+    chobitsu.domain('Overlay').highlightNode({
+      nodeId,
+      highlightConfig,
+    })
   }
   _initTpl() {
     const $container = this._$container
@@ -321,6 +341,8 @@ export default class Detail {
         this._render()
         devtools.notify('Refreshed', { icon: 'success' })
       })
+
+    this._boxModel.on('highlight', this._highlight)
   }
   _initObserver() {
     this._observer = new MutationObserver((mutations) => {

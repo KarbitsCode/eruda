@@ -449,9 +449,14 @@
 }
 
 .luna-box-model {
-  background: transparent;
+  background: var(--background);
 }
 
-.luna-box-model-position {
+.luna-box-model-position,
+.luna-box-model-margin,
+.luna-box-model-border,
+.luna-box-model-padding,
+.luna-box-model-content {
   color: var(--foreground);
+  background: var(--background);
 }
