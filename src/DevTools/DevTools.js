@@ -15,6 +15,7 @@ import extend from 'licia/extend'
 import isStr from 'licia/isStr'
 import startWith from 'licia/startWith'
 import ready from 'licia/ready'
+import pointerEvent from 'licia/pointerEvent'
 import evalCss from '../lib/evalCss'
 import emitter from '../lib/emitter'
 import { isDarkTheme } from '../lib/themes'
@@ -23,7 +24,6 @@ import LunaModal from 'luna-modal'
 import LunaTab from 'luna-tab'
 import {
   classPrefix as c,
-  drag,
   eventClient,
   hasSafeArea,
   safeStorage,
@@ -358,8 +358,8 @@ export default class DevTools extends Emitter {
 
       $resizer.css('height', '100%')
 
-      $document.on(drag('move'), moveListener)
-      $document.on(drag('end'), endListener)
+      $document.on(pointerEvent('move'), moveListener)
+      $document.on(pointerEvent('up'), endListener)
     }
     const moveListener = (e) => {
       if (!this._isResizing) {
@@ -385,11 +385,11 @@ export default class DevTools extends Emitter {
 
       $resizer.css('height', 10)
 
-      $document.off(drag('move'), moveListener)
-      $document.off(drag('end'), endListener)
+      $document.off(pointerEvent('move'), moveListener)
+      $document.off(pointerEvent('up'), endListener)
     }
     $resizer.css('height', 10)
-    $resizer.on(drag('start'), startListener)
+    $resizer.on(pointerEvent('down'), startListener)
 
     $navBar.on('contextmenu', (e) => e.preventDefault())
     this.$container.on('click', (e) => e.stopPropagation())

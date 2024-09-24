@@ -61,7 +61,7 @@
     "karma-jquery": "^0.2.4",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^5.0.0",
-    "licia": "^1.41.0",
+    "licia": "^1.42.0",
     "luna-box-model": "^1.0.0",
     "luna-console": "^1.3.4",
     "luna-data-grid": "^0.6.0",
