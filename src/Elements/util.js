@@ -7,6 +7,8 @@ export function formatNodeName(node, { noAttr = false } = {}) {
     return `<span class="${c('tag-name-color')}">(text)</span>`
   } else if (node.nodeType === Node.COMMENT_NODE) {
     return `<span class="${c('tag-name-color')}"><!--></span>`
+  } else if (isShadowRoot(node)) {
+    return `<span class="${c('tag-name-color')}">#shadow-root</span>`
   }
 
   const { id, className, attributes } = node
@@ -33,4 +35,12 @@ export function formatNodeName(node, { noAttr = false } = {}) {
   }
 
   return ret
+}
+
+export function isShadowRoot(node) {
+  if (window.ShadowRoot) {
+    return node instanceof ShadowRoot
+  }
+
+  return false
 }

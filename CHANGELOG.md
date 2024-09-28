@@ -1,3 +1,8 @@
+## 3.4.0 (27 Sep 2024)
+
+* feat: support shadow dom [#158](https://github.com/liriliri/eruda/issues/158)
+* fix: quirks mode table rendering [#459](https://github.com/liriliri/eruda/issues/459)
+
 ## 3.3.0 (9 Sep 2024)
 
 * feat: add vue devtools plugin

@@ -15,7 +15,7 @@ import evalCss from '../lib/evalCss'
 import Detail from './Detail'
 import chobitsu from '../lib/chobitsu'
 import emitter from '../lib/emitter'
-import { formatNodeName } from './util'
+import { formatNodeName, isShadowRoot } from './util'
 
 export default class Elements extends Tool {
   constructor() {
@@ -118,7 +118,7 @@ export default class Elements extends Tool {
     if (this._curNode.nodeType === Node.ELEMENT_NODE) {
       this._detail.show(this._curNode)
     } else {
-      this._detail.show(this._curNode.parentNode)
+      this._detail.show(this._curNode.parentNode || this._curNode.host)
     }
   }
   _initTpl() {
@@ -309,7 +309,14 @@ function getCrumbs(el) {
       idx: i++,
     })
 
-    el = el.parentElement
+    if (isShadowRoot(el)) {
+      el = el.host
+    }
+    if (!el.parentElement && isShadowRoot(el.parentNode)) {
+      el = el.parentNode
+    } else {
+      el = el.parentElement
+    }
   }
 
   return ret.reverse()

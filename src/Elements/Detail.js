@@ -277,7 +277,9 @@ export default class Detail {
     const events = el.erudaEvents
     if (events && keys(events).length !== 0) ret.listeners = events
 
-    if (needNoStyle(tagName)) return ret
+    if (needNoStyle(tagName)) {
+      return ret
+    }
 
     let computedStyle = cssStore.getComputedStyle()
 
@@ -472,8 +474,9 @@ function rmDefComputedStyle(computedStyle, styles) {
 
 const NO_STYLE_TAG = ['script', 'style', 'meta', 'title', 'link', 'head']
 
-const needNoStyle = (tagName) =>
+const needNoStyle = (tagName) => {
   NO_STYLE_TAG.indexOf(tagName.toLowerCase()) > -1
+}
 
 const wrapLink = (link) => `<a href="${link}" target="_blank">${link}</a>`
 
