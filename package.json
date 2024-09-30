@@ -2,14 +2,14 @@
   "name": "eruda",
   "version": "3.4.0",
   "description": "Console for Mobile Browsers",
-  "main": "eruda.js",
+  "main": "dist/eruda.js",
   "browserslist": [
     "since 2015",
     "not dead"
   ],
   "scripts": {
-    "ci": "npm run lint && npm run test && npm run build && npm run es5",
-    "build": "lsla shx rm -rf dist && webpack --config build/webpack.prod.js && webpack --config build/webpack.polyfill.js && node build/build && lsla shx cp README.md eruda.d.ts dist",
+    "ci": "npm run setup && npm run lint && npm run test && npm run build && npm run es5",
+    "build": "lsla shx rm -rf dist && webpack --config build/webpack.prod.js --progress profile && webpack --config build/webpack.polyfill.js --progress profile && node build/build && lsla shx cp README.md eruda.d.ts dist",
     "build:analyser": "webpack --config build/webpack.analyser.js",
     "dev": "webpack-dev-server --config build/webpack.dev.js --host 0.0.0.0",
     "test": "karma start",
@@ -18,7 +18,8 @@
     "lint:fix": "npm run lint -- --fix",
     "es5": "es-check es5 dist/eruda.js dist/eruda-polyfill.js",
     "setup": "lsla shx mkdir -p test/lib && lsla shx cp node_modules/jasmine-core/lib/jasmine-core/{jasmine.css,jasmine.js,jasmine-html.js,boot.js} test/lib && lsla shx cp node_modules/jasmine-jquery/lib/jasmine-jquery.js test/lib && lsla shx cp node_modules/jquery/dist/jquery.js test/lib",
-    "genIcon": "lsla genIcon --input src/style/icon --output src/style/icon.css --name eruda-icon && lsla prettier src/**/*.css --write"
+    "genIcon": "lsla genIcon --input src/style/icon --output src/style/icon.css --name eruda-icon && lsla prettier src/**/*.css --write",
+    "prepare": "npm run ci"
   },
   "repository": {
     "type": "git",
