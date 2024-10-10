@@ -105,7 +105,7 @@ export default [
     fn() {
       loadPlugin('monitor')
     },
-    desc: 'Display page fps and memory',
+    desc: 'Display page fps, memory and dom nodes',
   },
   {
     name: 'Load Features Plugin',
@@ -224,7 +224,7 @@ function loadPlugin(name) {
 }
 
 const pluginVersion = {
-  monitor: '1.0.2',
+  monitor: '1.1.1',
   features: '2.1.0',
   timing: '2.0.1',
   code: '2.2.0',

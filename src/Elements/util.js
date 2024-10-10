@@ -1,5 +1,6 @@
 import each from 'licia/each'
 import isStr from 'licia/isStr'
+import isShadowRoot from 'licia/isShadowRoot'
 import { classPrefix as c } from '../lib/util'
 
 export function formatNodeName(node, { noAttr = false } = {}) {
@@ -35,12 +36,4 @@ export function formatNodeName(node, { noAttr = false } = {}) {
   }
 
   return ret
-}
-
-export function isShadowRoot(node) {
-  if (window.ShadowRoot) {
-    return node instanceof ShadowRoot
-  }
-
-  return false
 }

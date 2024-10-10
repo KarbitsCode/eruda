@@ -9,13 +9,14 @@ import isEmpty from 'licia/isEmpty'
 import toNum from 'licia/toNum'
 import copy from 'licia/copy'
 import isMobile from 'licia/isMobile'
+import isShadowRoot from 'licia/isShadowRoot'
 import LunaDomViewer from 'luna-dom-viewer'
 import { isErudaEl, classPrefix as c, isChobitsuEl } from '../lib/util'
 import evalCss from '../lib/evalCss'
 import Detail from './Detail'
 import chobitsu from '../lib/chobitsu'
 import emitter from '../lib/emitter'
-import { formatNodeName, isShadowRoot } from './util'
+import { formatNodeName } from './util'
 
 export default class Elements extends Tool {
   constructor() {
