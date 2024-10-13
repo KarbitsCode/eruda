@@ -99,7 +99,7 @@ export default class Elements extends Tool {
 
     const node = this._curNode
 
-    if (!node) {
+    if (!node || isShadowRoot(node)) {
       return
     }
 
