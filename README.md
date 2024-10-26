@@ -82,4 +82,4 @@ For more detailed usage instructions, please read the documentation at [eruda.li
 
 ## Contribution
 
-Read [Contributing Guide](.github/CONTRIBUTING.md) for development setup instructions.
+Read [Contributing Guide](https://eruda.liriliri.io/docs/contributing.html) for development setup instructions.
