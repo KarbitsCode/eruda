@@ -10,9 +10,10 @@ import isNum from 'licia/isNum'
 import nextTick from 'licia/nextTick'
 import $ from 'licia/$'
 import toNum from 'licia/toNum'
-import isDarkMode from 'licia/isDarkMode'
 import extend from 'licia/extend'
 import isStr from 'licia/isStr'
+import theme from 'licia/theme'
+import upperFirst from 'licia/upperFirst'
 import startWith from 'licia/startWith'
 import ready from 'licia/ready'
 import pointerEvent from 'licia/pointerEvent'
@@ -265,19 +266,19 @@ export default class DevTools extends Emitter {
       $container.rmClass(c('safe-area'))
     }
   }
-  _setTheme(theme) {
+  _setTheme(t) {
     const { $container } = this
 
-    if (theme === 'System preference') {
-      theme = isDarkMode() ? 'Dark' : 'Light'
+    if (t === 'System preference') {
+      t = upperFirst(theme.get())
     }
 
-    if (isDarkTheme(theme)) {
+    if (isDarkTheme(t)) {
       $container.addClass(c('dark'))
     } else {
       $container.rmClass(c('dark'))
     }
-    evalCss.setTheme(theme)
+    evalCss.setTheme(t)
   }
   _setTransparency(opacity) {
     if (!isNum(opacity)) return
@@ -396,5 +397,12 @@ export default class DevTools extends Emitter {
     window.addEventListener('resize', this._checkSafeArea)
 
     emitter.on(emitter.SCALE, this._updateTabHeight)
+
+    theme.on('change', () => {
+      const t = this.config.get('theme')
+      if (t === 'System preference') {
+        this._setTheme(t)
+      }
+    })
   }
 }

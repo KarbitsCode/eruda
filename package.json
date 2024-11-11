@@ -1,6 +1,6 @@
 {
   "name": "eruda",
-  "version": "3.4.0",
+  "version": "3.4.1",
   "description": "Console for Mobile Browsers",
   "main": "dist/eruda.js",
   "browserslist": [
@@ -46,7 +46,7 @@
     "autoprefixer": "^9.7.4",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.5",
-    "chobitsu": "^1.8.1",
+    "chobitsu": "^1.8.4",
     "core-js": "^3.37.1",
     "css-loader": "^3.4.2",
     "es-check": "^6.2.1",
@@ -62,7 +62,7 @@
     "karma-jquery": "^0.2.4",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^5.0.0",
-    "licia": "^1.43.0",
+    "licia": "^1.44.0",
     "luna-box-model": "^1.0.0",
     "luna-console": "^1.3.5",
     "luna-data-grid": "^1.0.0",

@@ -203,6 +203,22 @@ export default class Network extends Tool {
 
     request.render()
   }
+  _loadingFailed = (params) => {
+    const request = this._requests[params.requestId]
+    if (!this._isRecording || !request) {
+      return
+    }
+
+    const time = params.timestamp * 1000
+    request.time = time - request.startTime
+    request.displayTime = ms(request.time)
+
+    request.hasErr = true
+    request.status = 0
+    request.done = true
+
+    request.render()
+  }
   _copyCurl = () => {
     const request = this._selectedRequest
 
@@ -322,6 +338,7 @@ export default class Network extends Tool {
     network.on('responseReceivedExtraInfo', this._resReceivedExtraInfo)
     network.on('responseReceived', this._resReceived)
     network.on('loadingFinished', this._loadingFinished)
+    network.on('loadingFailed', this._loadingFailed)
 
     emitter.on(emitter.SCALE, this._updateScale)
   }

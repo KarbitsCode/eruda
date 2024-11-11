@@ -1,3 +1,9 @@
+## 3.4.1 (10 Nov 2024)
+
+* fix: no copy and delete for shadow root
+* fix: fetch remains pending when error occurs
+* fix: theme not updated if system theme changed
+
 ## 3.4.0 (27 Sep 2024)
 
 * feat: support shadow dom [#158](https://github.com/liriliri/eruda/issues/158)
