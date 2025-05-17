@@ -1,5 +1,5 @@
-@import '../style/variable';
-@import '../style/mixin';
+@use '../style/variable' as *;
+@use '../style/mixin' as *;
 
 #elements {
   .elements {
@@ -22,7 +22,7 @@
     }
   }
   .dom-viewer-container {
-    @include overflow-auto(y);
+    @include overflow-auto();
     height: 100%;
     padding: 5px 0;
   }
