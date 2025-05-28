@@ -157,7 +157,7 @@ export default class EntryBtn extends Emitter {
   }
   initCfg(settings) {
     const cfg = (this.config = Settings.createCfg('entry-button', {
-      rememberPos: true,
+      rememberPos: false,
       pos: this._getDefPos(),
     }))
 
