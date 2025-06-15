@@ -98,11 +98,7 @@ export default class Network extends Tool {
     return ret
   }
   _updateDataGridHeight() {
-    const height = this._$el.offset().height - this._$control.offset().height
-    this._requestDataGrid.setOption({
-      minHeight: height,
-      maxHeight: height,
-    })
+    this._requestDataGrid.fit()
   }
   _reqWillBeSent = (params) => {
     if (!this._isRecording) {

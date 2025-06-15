@@ -23,8 +23,14 @@ describe('info', function () {
       expect($tool.find('.eruda-content').eq(3)).toContainText('os')
     })
 
+    it('sponsor', function () {
+      expect($tool.find('.eruda-content').eq(4)).toContainText(
+        'Open Collective'
+      )
+    })
+
     it('about', function () {
-      expect($tool.find('.eruda-content').eq(4)).toHaveText(/Eruda v[\d.]+/)
+      expect($tool.find('.eruda-content').eq(5)).toHaveText(/Eruda v[\d.]+/)
     })
   })
 

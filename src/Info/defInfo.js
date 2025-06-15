@@ -1,6 +1,7 @@
 import detectBrowser from 'licia/detectBrowser'
 import detectOs from 'licia/detectOs'
 import escape from 'licia/escape'
+import map from 'licia/map'
 
 const browser = detectBrowser()
 
@@ -37,21 +38,45 @@ export default [
     ].join(''),
   },
   {
+    name: 'Sponsor this Project',
+    val() {
+      return (
+        '<table><tbody>' +
+        map(
+          [
+            {
+              name: 'Open Collective',
+              link: 'https://opencollective.com/eruda',
+            },
+            {
+              name: 'Ko-fi',
+              link: 'https://ko-fi.com/surunzi',
+            },
+            {
+              name: 'Wechat Pay',
+              link: 'https://surunzi.com/wechatpay.html',
+            },
+          ],
+          (item) => {
+            return `<tr><td>${
+              item.name
+            }</td><td><a rel="noreferrer noopener" href="${
+              item.link
+            }" target="_blank">${item.link.replace(
+              'https://',
+              ''
+            )}</a></td></tr>`
+          }
+        ).join(' ') +
+        '</tbody></table>'
+      )
+    },
+  },
+  {
     name: 'About',
     val:
       '<a href="https://eruda.liriliri.io" target="_blank">Eruda v' +
       VERSION +
       '</a>',
-  },
-  {
-    name: 'Backers',
-    val() {
-      return `
-        <a rel="noreferrer noopener" href="https://opencollective.com/eruda" target="_blank">
-          <img data-exclude="true" style="width: 100%;" loading="lazy" src="https://opencollective.com/eruda/backers.svg?width=${
-            window.innerWidth * 1.5
-          }&exclude=true">
-        </a>`
-    },
   },
 ]
