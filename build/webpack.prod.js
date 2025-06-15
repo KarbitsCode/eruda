@@ -12,7 +12,7 @@ exports.plugins = exports.plugins.concat([
   }),
 ])
 exports.optimization = {
-  minimize: false,
+  minimize: !!(process.env.ERUDA_MINIFY),
   minimizer: [
     new TerserPlugin({
       extractComments: false,

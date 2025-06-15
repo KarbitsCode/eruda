@@ -5,7 +5,7 @@ module.exports = {
   entry: './src/polyfill',
   devtool: 'inline-source-map',
   optimization: {
-    minimize: false,
+    minimize: !!(process.env.ERUDA_MINIFY),
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
