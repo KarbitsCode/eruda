@@ -56,7 +56,7 @@
     width: 100%;
     border-top: 1px solid var(--border);
     height: 24px;
-    .icon-arrow-right {
+    .icon-right {
       line-height: 23px;
       color: var(--accent);
       position: absolute;
@@ -69,7 +69,7 @@
       padding-top: 40px;
       padding-bottom: 40px;
       border-top: none;
-      .icon-arrow-right {
+      .icon-right {
         display: none;
       }
       textarea {

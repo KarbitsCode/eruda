@@ -111,7 +111,7 @@ export default class Detail {
     const $container = this._$container
 
     const html = `<div class="${c('control')}">
-      <span class="${c('icon-arrow-left back')}"></span>
+      <span class="${c('icon-left back')}"></span>
       <span class="${c('element-name')}"></span>
       <span class="${c('icon-refresh refresh')}"></span>
     </div>

@@ -156,7 +156,7 @@ export default class Console extends Tool {
           <div class="button cancel">Cancel</div>
           <div class="button execute">Execute</div>
         </div>
-        <span class="icon-arrow-right"></span>
+        <span class="icon-right"></span>
         <textarea></textarea>
       </div>
     `)

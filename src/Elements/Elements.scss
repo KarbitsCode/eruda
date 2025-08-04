@@ -47,11 +47,6 @@
         background: var(--highlight);
       }
     }
-    .icon-arrow-right {
-      font-size: $font-size-s;
-      position: relative;
-      top: 1px;
-    }
   }
   .detail {
     @include absolute();
@@ -69,7 +64,7 @@
         width: 100%;
         display: inline-block;
       }
-      .icon-arrow-left {
+      .icon-left {
         left: 0;
       }
       .icon-refresh {
@@ -244,7 +239,7 @@
       border-left: 1px solid var(--border);
       .control {
         padding-left: 10px;
-        .icon-arrow-left {
+        .icon-left {
           display: none;
         }
       }

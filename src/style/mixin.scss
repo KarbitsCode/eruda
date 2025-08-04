@@ -73,6 +73,7 @@
     width: 18px;
     height: 18px;
     font-size: $font-size-l;
+    font-weight: normal;
     cursor: pointer;
     transition: color $anim-duration;
     &.filter-text {
@@ -80,7 +81,6 @@
       max-width: 80px;
       font-size: $font-size;
       overflow: hidden;
-      font-weight: normal;
       text-overflow: ellipsis;
       display: inline-block;
     }

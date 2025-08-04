@@ -64,7 +64,7 @@ export default class Detail extends Emitter {
     }
 
     const html = `<div class="${c('control')}">
-      <span class="${c('icon-arrow-left back')}"></span>
+      <span class="${c('icon-left back')}"></span>
       <span class="${c('icon-delete back')}"></span>
       <span class="${c('url')}">${escape(data.url)}</span>
       <span class="${c('icon-copy copy-res')}"></span>
