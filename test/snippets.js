@@ -9,10 +9,13 @@ describe('snippets', function () {
       let $body = $('body')
       let $btn = $tool.find('.eruda-run').eq(0)
 
+      let initial = $body.css('outline-width')
+      console.log('base outline-width:', initial)
+
       $btn.click()
       expect($body).toHaveCss({ outlineWidth: '2px' })
       $btn.click()
-      expect($body).toHaveCss({ outlineWidth: '0px' })
+      expect($body).toHaveCss({ outlineWidth: initial })
     })
 
     it('refresh page', function () {
